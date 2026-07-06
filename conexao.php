@@ -3,7 +3,7 @@
 $host = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "Aura Beauty Studio";
+$banco = "aura_beauty";
 
 $conexao = mysqli_connect(
   $host,

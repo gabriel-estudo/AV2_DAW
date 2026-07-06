@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura Beauty Studio</title>
+
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+
+  <header class="header">
+    <div class="logo">
+      <h1>Aura Beauty Studio</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#funcionarios">Funcionários</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#agendamentos">Agendamentos</a></li>
+
+        <li id="navCadastro"><a href="#clientes">Cadastre-se</a></li>
+        <li id="navPerfil" style="display: none"><a href="#home">Meu perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <div class="section-header">
+      <h2>Dashboard</h2>
+    </div>
+
+    <div class="dashboard-cards">
+      <div class="card-box">
+        <h3>Funcionários</h3>
+        <div id="totalFuncionarios">0</div>
+      </div>
+
+      <div class="card-box">
+        <h3>Serviços</h3>
+        <div id="totalServicos">0</div>
+      </div>
+
+      <div class="card-box">
+        <h3>Agendamentos</h3>
+        <div id="totalAgendamentos">0</div>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <h3>Últimos Agendamentos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Funcionário</th>
+            <th>Serviço</th>
+            <th>Data</th>
+            <th>Horário</th>
+          </tr>
+        </thead>
+        <tbody id="homeAgendamentos"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="clientes" class="section">
+    <div class="section-header">
+      <h2>Cliente</h2>
+    </div>
+
+    <div class="form-card">
+      <form id="formUsuario">
+        <input type="text" id="nome" placeholder="Nome" />
+        <input type="email" id="email" placeholder="Email" />
+        <input type="password" id="senha" placeholder="Senha" />
+
+        <button type="button" onclick="cadastrarUsuario()">Cadastrar</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="funcionarios" class="section">
+    <div class="section-header">
+      <h2>Funcionários</h2>
+    </div>
+
+    <div class="form-card">
+      <form id="formFuncionario">
+        <input type="hidden" id="idFuncionario" />
+
+        <input type="text" id="nomeFuncionario" placeholder="Nome" />
+        <input type="text" id="especialidade" placeholder="Especialidade" />
+        <input type="text" id="telefone" placeholder="Telefone" />
+        <input type="email" id="emailFuncionario" placeholder="Email" />
+
+        <button type="button" onclick="salvarFuncionario()">Salvar</button>
+      </form>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Especialidade</th>
+            <th>Telefone</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="listaFuncionarios"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="servicos" class="section">
+    <div class="section-header">
+      <h2>Serviços</h2>
+    </div>
+
+    <div class="form-card">
+      <form>
+        <input type="hidden" id="idServico" />
+
+        <input type="text" id="nomeServico" placeholder="Nome" />
+        <input type="text" id="descricao" placeholder="Descrição" />
+        <input type="number" id="preco" placeholder="Preço" />
+        <input type="text" id="duracao" placeholder="Duração" />
+
+        <button type="button" onclick="salvarServico()">Salvar</button>
+      </form>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Duração</th>
+          </tr>
+        </thead>
+        <tbody id="listaServicos"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="agendamentos" class="section">
+    <div class="section-header">
+      <h2>Agendamentos</h2>
+    </div>
+
+    <div class="form-card">
+      <form>
+        <input type="hidden" id="idAgendamento" />
+
+        <input type="text" id="usuario_id" placeholder="ID Usuário" />
+        <input type="text" id="funcionario_id" placeholder="ID Funcionário" />
+        <input type="text" id="servico_id" placeholder="ID Serviço" />
+        <input type="date" id="data" />
+        <input type="time" id="horario" />
+
+        <button type="button" onclick="salvarAgendamento()">Salvar</button>
+      </form>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Funcionário</th>
+            <th>Serviço</th>
+            <th>Data</th>
+            <th>Horário</th>
+          </tr>
+        </thead>
+        <tbody id="listaAgendamentos"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="scripts/agendamento.js"></script>
+  <script src="scripts/cadastro.js"></script>
+  <script src="scripts/dashboard.js"></script>
+  <script src="scripts/funcionario.js"></script>
+  <script src="scripts/servico.js"></script>
+  <script src="scripts/main.js"></script>
+</html>
